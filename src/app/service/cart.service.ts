@@ -5,6 +5,11 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
+  price: any;
+  count: any;
+  forEach(arg0: () => void) {
+    throw new Error('Method not implemented.');
+  }
 
   public cartItemList : any =[]
   public productList = new BehaviorSubject<any>([]);

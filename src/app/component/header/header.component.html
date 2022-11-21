@@ -1,17 +1,45 @@
+
 <header>
-    <div class="navbar navbar-dark bg-primary shadow-sm">
+        <!-- navbar code -->
+    <div class="navbar navbar-dark bg-primary shadow-sm ">
+        <div>
+            <i  class="bi bi-list " class="one"></i>
+              <svg (click)="menu_hide_show()" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+                <div  class="menu div1 "   appResize [resizableGrabWidth]="10"  [ngClass]="isshow? 'show':'hide'">
+          
+                  <ul >
+                     <li>Home</li>
+                     <li>Menu</li>
+                     <li>About us</li>
+                     <li>Pages</li>
+                  </ul>
+                </div>    
+              </div>
+
         <div class="navbar-brand align-item-center d-flex">
-            <i style="font-size: 40px;" class="fas fa-shipping-fast">&nbsp;
-                
-            </i>
-            <strong style="font-size: 30px;">Flipkart</strong>
+            <i style="font-size: 40px;" class="fas fa-shipping-fast">&nbsp;</i>
+            <strong style="font-size: 30px;">Solugenix</strong>
             <div class="form-group">
                 <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
             </div>
-            <span class="fas fa-search search-icon"></span>
-
-
+            <span class="fas fa-search search-icon"></span>  
         </div>
+    
+           <!-- bredcrumb -->
+        <div class="bread">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <button class="btn btn-secondary m-2">Home</button>
+                  <button class="btn btn-secondary m-2">About</button>
+                  <button class="btn btn-secondary m-2">Video</button>
+                </ol>
+              </nav>
+        </div>
+     
+
+             <!-- cart button code -->
         <button routerLink="cart" class="btn btn-primary">
             <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
             <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>

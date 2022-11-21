@@ -8,7 +8,10 @@ import { CartService } from 'src/app/service/cart.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-
+  
+  count:number = 5;
+  msg:string="";
+  
   public productList : any ;
   public filterCategory : any
   searchKey:string ="";
@@ -34,6 +37,11 @@ export class ProductsComponent implements OnInit {
   }
   addtocart(item: any){
     this.cartService.addtoCart(item);
+    this.count--;
+    if(this.count==0){
+     this.msg= "stock over"
+    //  box.classList.add("hide")
+    }
   }
   filter(category:string){
     this.filterCategory = this.productList

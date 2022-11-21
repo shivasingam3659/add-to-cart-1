@@ -6,7 +6,7 @@
     word-wrap: break-word;
     background: #fff;
     background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.2);
     border-radius: .25rem;
 }
 
@@ -35,7 +35,35 @@
     transition: 0.3s ease-in-out;
 }
 
-.card img:hover {
-    transition: 0.3s ease-in-out;
-    transform: scale(1.1);
+
+
+
+button{
+    width: 150px;
+}
+
+
+img:hover {
+    -webkit-transform: scaleX(-1);
+     transform: scaleX(-1);
+  }
+
+
+.container{
+    margin-right: 12px;
+}
+
+
+.stock{
+    color: red;
+    margin-top: 18px;
+}
+
+span{
+    color: green;
+    font-weight: 600;
+}
+
+.hide{
+    display: none;
 }

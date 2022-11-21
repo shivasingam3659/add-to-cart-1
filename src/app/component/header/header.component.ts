@@ -1,12 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/service/cart.service';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  
+  sidenavOption: any;
+  isshow:boolean=true;
+  repoService: any;
+  menu_hide_show(){
+  this.isshow = !this.isshow;
+  }
 
   public totalItem : number = 0;
   public searchTerm !: string;

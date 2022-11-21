@@ -9,6 +9,9 @@ import { ProductsComponent } from './component/products/products.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterPipe } from './shared/filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ScrollTopComponent } from './scroll-top/scroll-top.component';
+import { ResizeDirective } from './resize.directive';
+import { PaynowComponent } from './component/paynow/paynow.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +19,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     CartComponent,
     ProductsComponent,
+    ScrollTopComponent,
+    ResizeDirective,
+    PaynowComponent,
     FilterPipe
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,

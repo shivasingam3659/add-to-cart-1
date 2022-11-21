@@ -1,13 +1,83 @@
 .form-control {
     border-radius: 3px;
-    width: 600px;
-    margin-left: 20px;
+    width: 400px;
+    margin-left: 10px;
 }
 
 .search-icon {
     position: absolute;
     z-index: 10;
-    right: 59%;
+    right: 40%;
     top: 20px;
-    color: blue;
+    color: rgb(255, 255, 255);
 }
+
+i{
+    margin-left: 20px;
+}
+
+.one{
+    margin-top: 25px;
+}
+
+.menu{
+    width: 150px;
+    height: 100vh;
+    margin-top: 20px;
+    background-color: rgb(33, 129, 218);
+    color: rgb(255, 255, 255);
+    position: absolute;
+    max-width: none !important;
+
+  }
+  .menu ul li{
+
+    list-style-type: none;
+    padding: 10px;
+    line-height: 50px;
+
+  }
+  .show{
+
+    visibility: hidden;
+
+  }
+
+  .hide{
+
+    visibility: visible;
+
+  }
+
+  .bgcolor{
+    background-color: rgb(33, 129, 218);
+  }
+
+  .example-icon{
+    background-color: white;
+  }
+
+  .breadcrumb-navigation > li {
+    display: inline;
+  }
+
+  .breadcrumb-navigation li + li:before {
+    padding: 4px;
+    content: "/";
+  }
+
+  .breadcrumb-navigation{
+    text-align: right;
+    padding-right: 30px;
+   
+  }
+  li{
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .div1{
+    flex-grow:0;
+    z-index: 1;
+  }
+
+

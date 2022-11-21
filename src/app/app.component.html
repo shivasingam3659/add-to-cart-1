@@ -1,2 +1,7 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
+<div id="htmltable" #htmltable>
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+    <app-scroll-top></app-scroll-top>
+</div>
+
+<button  class="btn btn-primary btn-block" (click)="downloadAsPDF()">Download PDF</button>
