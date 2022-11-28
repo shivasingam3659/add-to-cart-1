@@ -1,7 +1,7 @@
 
 <header>
-        <!-- navbar code -->
-    <div class="navbar navbar-dark bg-primary shadow-sm ">
+       
+    <div class="navbar navbar-dar shadow-sm nvContainer">
         <div>
             <i  class="bi bi-list " class="one"></i>
               <svg (click)="menu_hide_show()" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
@@ -10,10 +10,13 @@
                 <div  class="menu div1 "   appResize [resizableGrabWidth]="10"  [ngClass]="isshow? 'show':'hide'">
           
                   <ul >
-                     <li>Home</li>
-                     <li>Menu</li>
-                     <li>About us</li>
-                     <li>Pages</li>
+                    <a (click)="toggleData()" routerLink="products" class="nav-link" routerLinkActive="active">Home</a>
+                    <a  routerLink="barchart" class="nav-link" routerLinkActive="active">BarChart</a>
+                    <a   routerLink="linechart" class="nav-link" routerLinkActive="active">LineChart</a>
+                    <a   routerLink="myorders" class="nav-link" routerLinkActive="active">My-Orders</a>
+                    
+
+                    
                   </ul>
                 </div>    
               </div>
@@ -27,22 +30,77 @@
             <span class="fas fa-search search-icon"></span>  
         </div>
     
-           <!-- bredcrumb -->
+    
         <div class="bread">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <button class="btn btn-secondary m-2">Home</button>
-                  <button class="btn btn-secondary m-2">About</button>
-                  <button class="btn btn-secondary m-2">Video</button>
+                  <div *ngIf="toDisplay">
+                  
+                     <button routerLink="products" class="btn btn-secondary bb" routerLinkActive="active"><i class="bi bi-house ibtn"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                        </svg></button>
+                     </div>
+                  
+                  <button  routerLink="video" class="btn btn-secondary" routerLinkActive="active"><i class="bi bi-youtube ibtn"></i>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                      <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+                    </svg></button>
+
                 </ol>
               </nav>
         </div>
-     
 
-             <!-- cart button code -->
-        <button routerLink="cart" class="btn btn-primary">
-            <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+
+        
+     
+        <div class="cart1">
+          <button  routerLink="cart" class="btn btn-secondary">
+            <i  (click)="toggleData()" style="font-size: 30px;" class="fas fa-cart-plus "></i>
             <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
-        </button>
+        </button> 
+        </div>
+       
     </div>
 </header>
+
+
+  
+
+
+  <!-- <mat-toolbar>
+    <mat-toolbar-row class="justify-content-between">
+      <button mat-icon-button (click)="toggleSidebar()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+    <div class="row mr-2 ml-auto">
+      <ul class="row m-0 align-items-center">
+        <li>
+          <button
+            mat-button
+            [matMenuTriggerFor]="menu"
+            class="user mt-2 d-flex align-items-center"
+          >
+             <img src="./assets/user.jpg" alt="" class="user-image mr-1 p-2" />
+
+            Shivasingam
+            <mat-icon class="user-image-icon ml-1 "
+              >keyboard_arrow_down</mat-icon
+            >
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon >exit_to_app</mat-icon>
+              <span class="txt">Logout</span> 
+            </button>
+          </mat-menu>
+        </li>
+      </ul>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar> -->
+<!-- <button class="cart1" routerLink="cart" class="btn btn-secondary">
+  <i (click)="toggleData()" style="font-size: 30px;" class="fas fa-cart-plus "></i>
+  <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+</button>  -->

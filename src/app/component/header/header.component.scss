@@ -5,29 +5,30 @@
 }
 
 .search-icon {
-    position: absolute;
+    position: fixed;
     z-index: 10;
-    right: 40%;
-    top: 20px;
+    right: 38%;
+    top: 46px;
     color: rgb(255, 255, 255);
 }
 
 i{
-    margin-left: 20px;
+  margin-left: 20px;
+ 
 }
 
-.one{
-    margin-top: 25px;
-}
+
 
 .menu{
     width: 150px;
     height: 100vh;
-    margin-top: 20px;
-    background-color: rgb(33, 129, 218);
+    margin-top: 28px;
+    background-color: black;
     color: rgb(255, 255, 255);
     position: absolute;
     max-width: none !important;
+    margin-top: 47px;
+    
 
   }
   .menu ul li{
@@ -78,6 +79,119 @@ i{
   .div1{
     flex-grow:0;
     z-index: 1;
+
   }
 
 
+  button{
+    margin-top: 25px;
+    
+  }
+
+.bb{
+  margin-right: 15px;
+}
+
+a{
+  color: white;
+  padding: 10px;
+  line-height: 50px;
+  font-weight: 600;
+}
+
+.ibtn{
+  margin: auto;
+}
+
+.cart1{
+  margin: 25px;
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
+.nvContainer{
+    background-color: black;
+    
+
+}
+
+strong,i,svg{
+  color: white;
+}
+
+strong{
+  margin-right: 20px;
+  margin-bottom: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// mat-toolbar {
+//   position: sticky;
+//   top: 0;
+//   z-index: 100;
+// }
+
+// ul {
+//   li {
+//     list-style: none;
+//   }
+// }
+// button {
+//   outline: none;
+//   border: 0;
+//   background: transparent;
+// }
+// .user {
+//   font-size: 14px;
+// }
+// mat-toolbar {
+//   background: #0f172a;
+// }
+// .user-image {
+//   border-radius: 50%;
+//   width: 50px;
+//   height: 50px;
+//   &-icon {
+//     height: 18px;
+//     font-size: 16px;
+//   }
+// }
+
+// ::ng-deep {
+//   .mat-menu-content {
+//     width: 160px;
+//   }
+// }
+// button{
+//   color: white;
+// }
+
+// .txt{
+//   color:brown;
+//   font-weight: 600;
+//   font-size: 15px;
+// }

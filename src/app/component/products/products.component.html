@@ -1,7 +1,24 @@
-<div class="card-top container-fluid">
+<div class="card-top container-fluid ">
     <div class="container d-flex">
         <div class="item">
-           
+            <a (click)="filter('')">
+                <h6>All products</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('electronics')">
+                <h6>Electronics</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('fashion')">
+                <h6>Fashion</h6>
+            </a>
+        </div>
+        <div class="item">
+            <a (click)="filter('jewelery')">
+                <h6>Jewllery</h6>
+            </a>
         </div>
     </div>
 </div>
@@ -11,7 +28,7 @@
 <div class="container">
     <div class="row">
         <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
-            <div class="card col-md-3">
+            <div class="card col-md-3 ">
 
                 <!--double click-->
                 <div ng-controller="app">
@@ -21,8 +38,9 @@
                 
                 <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.title}}</h5>
                 <p><strong>Price:</strong> ${{item.price}}</p>
-                <button class="btn btn-warning" (click)=addtocart(item)>Add to cart</button>
-                <p id="box" class="stock">Only <span>{{count}}</span> stocks are left !</p>
+                <p><strong>Rating:</strong><b>{{item.rating.rate}}</b> </p>
+                <button class="btn btn-warning abtn" (click)=addtocart(item)>Add to cart</button>
+                <p class="stock">Only <span>{{item.rating.count}}</span> stocks are left !</p>
                 <p>{{msg}}</p>
             </div>
         </ng-container>

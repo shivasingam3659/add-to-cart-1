@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/service/cart.service';
 
 
+
 @Component({
   selector: 'app-paynow',
   templateUrl: './paynow.component.html',
@@ -16,7 +17,7 @@ export class PaynowComponent implements OnInit {
     this.loadStripe();
   }
  
-  pay(amount: any) {    
+  payNow(item: any) {    
  
     var handler = (<any>window).StripeCheckout.configure({
       key: 'pk_test_51M5N4YSEcEtB2hwIyPy8lwxB98H4LHXcwziRUyQK2gn5crnpmnPDl2lZqpSu6enI3LL9cphz0CgttELckz6TAhml00SzhaMmqX',
@@ -24,8 +25,10 @@ export class PaynowComponent implements OnInit {
       token: function (token: any) {
         // You can access the token ID with `token.id`.
         // Get the token ID to your server-side code for use.
+        
         console.log(token)
         alert('Payment Done successful');
+        this.cartService.removeAllCart();
         
       }
     });
@@ -33,13 +36,13 @@ export class PaynowComponent implements OnInit {
     handler.open({
       name: 'PayNow',
       description: 'Debit/Credit Card',
-      amount: amount * 100
+      amount: item.price
     });
  
   }
  
   loadStripe() {
-     
+    
     if(!window.document.getElementById('stripe-script')) {
       var s = window.document.createElement("script");
       s.id = "stripe-script";

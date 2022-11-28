@@ -6,8 +6,10 @@
     word-wrap: break-word;
     background: #fff;
     background-clip: border-box;
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    border-radius: .25rem;
+    // border: 1px solid rgba(0, 0, 0, 0.2);
+    // border-radius: .25rem;
+    margin-left: 50px;
+    margin: 28px;
 }
 
 .item img {
@@ -26,6 +28,7 @@
 .card {
     padding: 20px;
     margin: 50px;
+    margin-left: 50px;
 }
 
 .card img {
@@ -33,37 +36,29 @@
     height: 200px;
     margin-bottom: 15px;
     transition: 0.3s ease-in-out;
+    
 }
 
-
-
-
-button{
-    width: 150px;
-}
-
-
-img:hover {
-    -webkit-transform: scaleX(-1);
-     transform: scaleX(-1);
-  }
-
-
-.container{
-    margin-right: 12px;
-}
-
-
-.stock{
-    color: red;
-    margin-top: 18px;
+.card img:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
 }
 
 span{
-    color: green;
-    font-weight: 600;
+    color: red;
+    font-weight: 800;
+    font-size: 18px;
+}
+.stock{
+    margin-top: 15px;
 }
 
-.hide{
-    display: none;
+b{
+    color: rgb(15, 156, 15);
+    margin-left: 10px;
+}
+
+.abtn{
+    width: 180px;
+   
 }

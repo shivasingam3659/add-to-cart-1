@@ -8,8 +8,7 @@ import { CartService } from 'src/app/service/cart.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  
-  count:number = 5;
+
   msg:string="";
   
   public productList : any ;
@@ -36,13 +35,24 @@ export class ProductsComponent implements OnInit {
     })
   }
   addtocart(item: any){
+    localStorage.setItem(item.id, JSON.stringify(item))
     this.cartService.addtoCart(item);
-    this.count--;
-    if(this.count==0){
+    if(item.rating.count==0){
      this.msg= "stock over"
-    //  box.classList.add("hide")
+    }else{
+      item.rating.count--;
     }
   }
+
+//   addtoCart(item: any) { 
+//     if(item.quantity){ // if quantity already exists on food object
+//       item.quantity++;
+//    }else{
+//    item.quantity=1;//if quantity does not exist on food object, add it
+//    }
+//    console.log(food);
+// }
+
   filter(category:string){
     this.filterCategory = this.productList
     .filter((a:any)=>{

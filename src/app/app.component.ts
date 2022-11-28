@@ -15,6 +15,7 @@ import html2canvas from 'html2canvas';
 })
 export class AppComponent {
   
+  
   @Input() count: number | undefined;
   title = 'add-to-cart';
   sidenavOption: any;
@@ -27,7 +28,7 @@ export class AppComponent {
 @ViewChild('pdfTable') pdfTable: ElementRef;
 //PDF genrate button click function
 public downloadAsPDF() {
-  let data = document.getElementById('htmltable');
+  let data = document.getElementById('code');
       
       html2canvas(data).then(canvas => {
           
@@ -37,7 +38,7 @@ public downloadAsPDF() {
           const contentDataURL = canvas.toDataURL('image/png')
           let doc = new jsPDF('p', 'mm', 'a4');
           let position = 0;
-          doc.addImage(contentDataURL, 'PNG', 0, position, docWidth, docHeight)
+          doc.addImage(contentDataURL, 'jpg', 0, position, docWidth, docHeight)
           
           doc.save('exportedPdf.pdf');
       });
