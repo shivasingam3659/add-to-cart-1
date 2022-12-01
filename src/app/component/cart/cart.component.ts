@@ -11,16 +11,18 @@ export class CartComponent implements OnInit {
   public products : any = [];
   public grandTotal !: number;
   public keys: any
+  contactForm: any;
   constructor(private cartService : CartService) { }
 
   ngOnInit(): void {
     this.getCart()
   }
   removeItem(item: any){
+    confirm("Are you sure")
     this.cartService.removeCartItem(item);
     localStorage.removeItem(String(item.id))
     this.getCart()
-    confirm("Are you sure")
+   
   }
 
   emptycart(){
@@ -51,15 +53,16 @@ export class CartComponent implements OnInit {
   }
 
   decrementQuantity(item: any) {
-    if(item.quantity == 1) {
+    if(item.quantity = 1) {
       localStorage.removeItem(String(item.id))
       this.getCart()
-    } else {
-      item.quantity--
+    } else{
+      item.quantity--;
       item.total = item.price*item.quantity
       localStorage.setItem(item.id, JSON.stringify(item))
       this.getCart()
     }
   }
+
 
 }

@@ -13,5 +13,10 @@ export class ApiService {
     .pipe(map((res:any)=>{
       return res;
     }))
+
+  }
+
+  Getchartinfo(){
+    return this.http.get("https://localhost:4100/sales");
   }
 }

@@ -10,7 +10,7 @@ import { CartService } from 'src/app/service/cart.service';
 })
 export class HeaderComponent implements OnInit {
  
-  
+  showNav = false;
   toDisplay = true;
   toggleData() {
     this.toDisplay = !this.toDisplay;

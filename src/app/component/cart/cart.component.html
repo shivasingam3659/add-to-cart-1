@@ -2,7 +2,7 @@
     <div class="container">
         <div class="card-table">
             <div class="cart-product">
-                <table  class="table table-responsive">
+                <table id="tabledata" class="table table-responsive">
                     <thead>
                         <tr>
                             <th>Sr.No</th>
@@ -15,13 +15,13 @@
                             <th>Grand Total</th>
                         </tr>
                     </thead>
-                    <tbody >
+                    <tbody>
                         <tr *ngFor="let item of products; let i = index">
                             <td>{{i+1}}</td>
                             <td>{{item.title}}</td>
                             <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
                             <th style="width: 12%;">{{item.price}}</th>
-                            
+
                             <!-- plus minus button -->
                             <div class="row">
                                 <div class="col">
@@ -32,28 +32,30 @@
                                 <div class="col ml-4 mr-2">
                                     {{item.quantity}}
                                 </div>
-    
+
                                 <div class="col">
                                     <button (click)="decrementQuantity(item)" class="btn btn-primary btn-sm">
                                         <i class="fas fa-minus"></i>
                                     </button>
                                 </div>
                             </div>
-                           
-                           <!-- ............. -->
-                            
+
+                            <!-- ............. -->
+
 
                             <td style="width: 12%;">{{item.total}}</td>
                             <td>
-                                <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                <button (click)="removeItem(item)" class="btn btn-danger"><i
+                                        class="fas fa-trash-alt"></i></button>
                             </td>
                         </tr>
                         <tr>
-                           
+
 
                             <td colspan="4"></td>
                             <td><button (click)="emptycart()" class="btn btn-primary">Empty Cart</button></td>
                             <td><button routerLink="/products" class="btn btn-primary">Shop More</button></td>
+
                             <app-paynow></app-paynow>
                             <td><strong> ${{grandTotal}}</strong></td>
                         </tr>
@@ -71,11 +73,10 @@
             <h5 class="card-title">My Cart</h5>
         </div>
         <div class="center">
-            <img src="https://th.bing.com/th/id/R.afa6a28d0ee0b5e7d55b7a5aecdfedec?rik=eOl3Z%2bU0XvmYlw&riu=http%3a%2f%2fiticsystem.com%2fimg%2fempty-cart.png&ehk=0omil1zRH7T3Pb5iTzvueamUQLSSb55vgY7dLFF8Bl8%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="">
+            <img src="https://th.bing.com/th/id/R.afa6a28d0ee0b5e7d55b7a5aecdfedec?rik=eOl3Z%2bU0XvmYlw&riu=http%3a%2f%2fiticsystem.com%2fimg%2fempty-cart.png&ehk=0omil1zRH7T3Pb5iTzvueamUQLSSb55vgY7dLFF8Bl8%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"
+                alt="">
             <h6>Add item to it now</h6>
-            <button routerLink="/products" class="btn btn-danger">Shop Now</button>
+            <button routerLink="/products" class="btn btn-danger eb">Shop Now</button>
         </div>
     </div>
 </ng-container>
-
-

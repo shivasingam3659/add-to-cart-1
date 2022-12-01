@@ -1,0 +1,85 @@
+<!-- navbarcode -->
+<nav class="navbar navbar light bg-primary">
+    <div class="container-fluid">
+        <h1>Admin Dashboard</h1>
+        <div class="flex">
+            <div class="row" class="serach">
+                <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)"
+                    placeholder="search products">
+
+            </div>
+
+        </div>
+    </div>
+</nav>
+
+
+
+
+<!-- tablecode -->
+
+<table ng-app="myapp" ng-controller="tableController" class="table m-3">
+    <thead>
+        <tr>
+            <th scope="col">Product ID</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Quntity</th>
+            <th style="text-align: center" scope="col">Action</th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
+            <tr ng-repeat="item in items">
+                <td>{{item.id}}</td>
+                <td >{{item.title}}</td>
+                <td><input  class="inputClass" type="text" [(ngModel)]="item.rating.count" /></td>
+                <td>
+                    <button (click)="addToLocal(item)" type="button" class="btn btn-warning mx-3">Update</button>
+                 
+                    <button  (click)="saveFromLocal(item)" class="btn btn-danger ">Delete</button>
+                </td>
+
+            </tr>
+        </ng-container>
+
+    </tbody>
+</table>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Employee Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1"><b>Edit Quntity</b></label>
+                        <input type="textd" class="form-control" id="exampleInputPassword1" placeholder="Enter Quntity">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button  type="button" class="btn btn-info">ADD Quantity</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <script>
+    $scope.deleteRow= function (i) {
+       $scope.items.splice(i, 1);
+   };
+</script> -->

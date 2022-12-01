@@ -8,8 +8,6 @@ import { CartService } from 'src/app/service/cart.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-
-  msg:string="";
   
   public productList : any ;
   public filterCategory : any
@@ -36,22 +34,26 @@ export class ProductsComponent implements OnInit {
   }
   addtocart(item: any){
     localStorage.setItem(item.id, JSON.stringify(item))
+    // localStorage.setItem(item.rating.count, JSON.stringify(item))
     this.cartService.addtoCart(item);
     if(item.rating.count==0){
-     this.msg= "stock over"
+     alert("Stock OVER!!!  Veredhi konnukko")
     }else{
       item.rating.count--;
     }
   }
 
-//   addtoCart(item: any) { 
-//     if(item.quantity){ // if quantity already exists on food object
-//       item.quantity++;
-//    }else{
-//    item.quantity=1;//if quantity does not exist on food object, add it
-//    }
-//    console.log(food);
-// }
+
+  // addtocart(item: any){
+  //   localStorage.setItem(item.id, JSON.stringify(item))
+  //   this.cartService.addtoCart(item);
+  //   if(item.rating.count==0){
+  //    this.msg= "stock over"
+  //   }else{
+  //     item.rating.count--;
+  //   }
+  // }
+
 
   filter(category:string){
     this.filterCategory = this.productList
@@ -61,5 +63,6 @@ export class ProductsComponent implements OnInit {
       }
     })
   }
+
 
 }

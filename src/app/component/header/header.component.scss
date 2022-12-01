@@ -5,7 +5,7 @@
 }
 
 .search-icon {
-    position: fixed;
+    position: absolute;
     z-index: 10;
     right: 38%;
     top: 46px;
@@ -22,12 +22,13 @@ i{
 .menu{
     width: 150px;
     height: 100vh;
-    margin-top: 28px;
+   
     background-color: black;
     color: rgb(255, 255, 255);
     position: absolute;
     max-width: none !important;
     margin-top: 47px;
+    
     
 
   }
@@ -117,16 +118,13 @@ a{
 
 strong,i,svg{
   color: white;
+  
 }
 
 strong{
   margin-right: 20px;
   margin-bottom: 3px;
 }
-
-
-
-
 
 
 

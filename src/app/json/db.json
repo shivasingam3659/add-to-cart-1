@@ -1,0 +1,39 @@
+{
+  "sales": [
+    {
+      "year": 2015,
+      "amount": 5000,
+      "colorcode": "green"
+    },
+    {
+      "year": 2016,
+      "amount": 6000,
+      "colorcode": "yellow"
+    },
+    {
+      "year": 2017,
+      "amount": 2000,
+      "colorcode": "red"
+    },
+    {
+      "year": 2018,
+      "amount": 6500,
+      "colorcode": "blue"
+    },
+    {
+      "year": 2019,
+      "amount": 4000,
+      "colorcode": "grey"
+    },
+    {
+      "year": 2020,
+      "amount": 7000,
+      "colorcode": "orange"
+    },
+    {
+      "year": 2021,
+      "amount": 17000,
+      "colorcode": "pink"
+    }
+  ]
+}

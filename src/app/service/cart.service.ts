@@ -5,6 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
+  
   price: any;
   count: any;
   forEach(arg0: () => void) {
