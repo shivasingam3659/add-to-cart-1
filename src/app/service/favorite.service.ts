@@ -4,58 +4,59 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class CartService {
-  
+export class FavoriteService {
+ 
   price: any;
   count: any;
   forEach(arg0: () => void) {
     throw new Error('Method not implemented.');
   }
 
-  public cartItemList : any =[]
+  public favorItemList : any =[]
   public adminList : any =[]
-  public productList = new BehaviorSubject<any>([]);
+  public productList2 = new BehaviorSubject<any>([]);
   public search = new BehaviorSubject<string>("");
 
   constructor() { }
   getProducts(){
-    return this.productList.asObservable();
+    return this.productList2.asObservable();
   }
 
   setProduct(product : any){
-    this.cartItemList.push(...product);
-    this.productList.next(product);
+    this.favorItemList.push(...product);
+    this.productList2.next(product);
   }
   setAdmin(product : any){
     
   }
-  addtoCart(product : any){
-    this.cartItemList.push(product);
-    this.productList.next(this.cartItemList);
+  
+  addtoFavourt(product : any){
+    this.favorItemList.push(product);
+    this.productList2.next(this.favorItemList);
     this.getTotalPrice();
-    console.log(this.cartItemList)
+    console.log(this.favorItemList)
   }
-  addToLocal(product : any){
-   
-  }
+
+  
 
   getTotalPrice() : number{
     let grandTotal = 0;
-    this.cartItemList.map((a:any)=>{
+    this.favorItemList.map((a:any)=>{
       grandTotal += a.total;
     })
     return grandTotal;
   }
   removeCartItem(product: any){
-    this.cartItemList.map((a:any, index:any)=>{
+    this.favorItemList.map((a:any, index:any)=>{
       if(product.id=== a.id){
-        this.cartItemList.splice(index,1);
+        this.favorItemList.splice(index,1);
       }
     })
-    this.productList.next(this.cartItemList);
+    this.productList2.next(this.favorItemList);
   }
   removeAllCart(){
-    this.cartItemList = []
-    this.productList.next(this.cartItemList);
+    this.favorItemList = []
+    this.productList2.next(this.favorItemList);
   }
 }
+

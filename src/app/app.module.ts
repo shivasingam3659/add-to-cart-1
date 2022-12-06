@@ -25,6 +25,7 @@ import { LoginComponent } from './LR/login/login.component';
 import { AuthInterceptor } from './auth.interceptor';
 import { HomeComponent } from './LR/home/home.component';
 import { NavComponent } from './LR/nav/nav.component';
+import { FavouriteComponent } from './favourite/favourite.component';
 
 
 
@@ -48,6 +49,7 @@ import { NavComponent } from './LR/nav/nav.component';
     LoginComponent,
     HomeComponent,
     NavComponent,
+    FavouriteComponent,
 
   ],
   

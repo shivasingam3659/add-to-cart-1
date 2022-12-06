@@ -1,3 +1,4 @@
+import { FavouriteComponent } from './favourite/favourite.component';
 import { LoginComponent } from './LR/login/login.component';
 import { RegisterComponent } from './LR/register/register.component';
 import { AdminComponent } from './admin/admin.component';
@@ -20,7 +21,9 @@ const routes: Routes = [
   {path:'paichart', component: BarChartComponent},
   {path:'admin', component: AdminComponent},
   {path:'register', component: RegisterComponent},
-  {path:'login', component: LoginComponent}
+  {path:'login', component: LoginComponent},
+  {path:'favourite', component: FavouriteComponent}
+
 
 
 ];

@@ -1,6 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { CartService } from 'src/app/service/cart.service';
-
+import { FavoriteService } from 'src/app/service/favorite.service';
 
 
 @Component({
@@ -23,15 +23,21 @@ export class HeaderComponent implements OnInit {
   }
 
   public totalItem : number = 0;
+  public totalItem2 : number = 0;
   public searchTerm !: string;
-  constructor(private cartService : CartService) { }
+  constructor(private cartService : CartService, private favoriteService : FavoriteService) { }
 
   ngOnInit(): void {
     this.cartService.getProducts()
     .subscribe(res=>{
       this.totalItem = res.length;
     })
+    this.favoriteService.getProducts()
+    .subscribe(res=>{
+      this.totalItem2 = res.length;
+    })
   }
+ 
   search(event:any){
     this.searchTerm = (event.target as HTMLInputElement).value;
     console.log(this.searchTerm);

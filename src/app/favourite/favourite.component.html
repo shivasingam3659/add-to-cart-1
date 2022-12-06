@@ -9,7 +9,7 @@
                             <th>Product Name</th>
                             <th>Product Image</th>
                             <th>Price</th>
-                            <th>Quantity</th>
+                            <th>Category</th>
                             <th>Total</th>
                             <th>Action</th>
                             <th>Grand Total</th>
@@ -21,9 +21,10 @@
                             <td>{{item.title}}</td>
                             <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
                             <th style="width: 12%;">{{item.price}}</th>
+                            <th class="tcell" style="width: 12%;">{{item.category}}</th>
 
                             <!-- plus minus button -->
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col">
                                     <button (click)="incrementQuantity(item)" class="btn btn-primary btn-sm">
                                         <i class="fas fa-plus"></i>
@@ -38,7 +39,7 @@
                                         <i class="fas fa-minus"></i>
                                     </button>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <!-- ............. -->
 
@@ -53,10 +54,9 @@
 
 
                             <td colspan="4"></td>
-                            <td><button (click)="emptycart()" class="btn btn-primary">Empty Cart</button></td>
-                            <td><button routerLink="/products" class="btn btn-primary">Shop More</button></td>
-
-                            <app-paynow></app-paynow>
+                            <!-- <td><button (click)="emptycart()" class="btn btn-primary">Empty Cart</button></td> -->
+                            <td><button routerLink="/products" class="btn btn-success">Shop More</button></td>
+                            <td><button (click)="emptycart()" class="btn btn-success">Delete All</button></td>
                             <td><strong> ${{grandTotal}}</strong></td>
                         </tr>
                     </tbody>
@@ -70,13 +70,13 @@
 <ng-container *ngIf="products.length ==0">
     <div class="container">
         <div class="card">
-            <h5 class="card-title">My Cart</h5>
+            <h5 class="card-title">My Favourites</h5>
         </div>
         <div class="center">
-            <img src="https://cdn.pixabay.com/photo/2016/08/31/20/04/emoticon-1634515_960_720.png"
+            <img src="https://cdn.pixabay.com/photo/2016/08/21/18/48/emoticon-1610518_960_720.png"
                 alt="">
-            <h3>Add items to Cart</h3>
-            <button routerLink="/products" class="btn btn-success eb">Shop Now</button>
+            <h6>Add products to your Favourite List</h6>
+            <button routerLink="/products" class="btn btn-success eb">Shop More</button>
         </div>
     </div>
 </ng-container>

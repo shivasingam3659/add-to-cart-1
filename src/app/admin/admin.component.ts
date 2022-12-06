@@ -9,6 +9,7 @@ import { CartService } from 'src/app/service/cart.service';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
+  
   public productList: any;
   public filterCategory: any
   searchKey: string = "";
@@ -55,6 +56,8 @@ export class AdminComponent implements OnInit {
   }
 
 
+ 
+
   filter(category: string) {
     this.filterCategory = this.productList
       .filter((a: any) => {
@@ -90,6 +93,14 @@ export class AdminComponent implements OnInit {
     this.getCart()
     console.log(countable)
   }
+
+  // addToLocal(item:any){
+  //   localStorage.setItem(item.id, JSON.stringify(item.rating.count))
+  //   var countable = (localStorage.getItem(item.id))
+  //   this.getCart()
+  //   console.log(countable)
+  // }
+
 
   saveFromLocal(item:any){
     localStorage.getItem(item.id)

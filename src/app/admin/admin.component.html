@@ -23,7 +23,9 @@
         <tr>
             <th scope="col">Product ID</th>
             <th scope="col">Product Name</th>
+            <th scope="col">Price</th>
             <th scope="col">Quntity</th>
+            <th scope="col">Status</th>
             <th style="text-align: center" scope="col">Action</th>
 
         </tr>
@@ -34,12 +36,17 @@
         <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
             <tr ng-repeat="item in items">
                 <td>{{item.id}}</td>
-                <td >{{item.title}}</td>
-                <td><input  class="inputClass" type="text" [(ngModel)]="item.rating.count" /></td>
+                <td>{{item.title}}</td>
+                <td>{{item.price}}</td>
+                <td><input class="inputClass" type="text" [(ngModel)]="item.rating.count" /></td>
+                <td>
+                    <input class="checkbox" type="checkbox" checked>
+                </td>
                 <td>
                     <button (click)="addToLocal(item)" type="button" class="btn btn-warning mx-3">Update</button>
-                 
-                    <button  (click)="saveFromLocal(item)" class="btn btn-danger ">Delete</button>
+
+                    <button (click)="removeItem(item)" class="btn btn-danger"><i
+                        class="fas fa-trash-alt"></i></button>
                 </td>
 
             </tr>
@@ -72,7 +79,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button  type="button" class="btn btn-info">ADD Quantity</button>
+                <button type="button" class="btn btn-info">ADD Quantity</button>
             </div>
         </div>
     </div>

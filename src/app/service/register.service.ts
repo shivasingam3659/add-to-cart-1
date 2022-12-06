@@ -10,6 +10,6 @@ export class RegistrationService {
   constructor(private http:HttpClient) { }
 
   register(username:string,password:string):Observable<any>{
-    return this.http.post('http://localhost:4200/register',{username,password})
+    return this.http.post('http://localhost:8000/users/register',{username,password})
   }
 }

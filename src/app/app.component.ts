@@ -15,7 +15,6 @@ import html2canvas from 'html2canvas';
 })
 export class AppComponent {
   
-  
   @Input() count: number | undefined;
   title = 'add-to-cart';
   sidenavOption: any;

@@ -22,7 +22,6 @@ i{
 .menu{
     width: 150px;
     height: 100vh;
-   
     background-color: black;
     color: rgb(255, 255, 255);
     position: absolute;
@@ -86,11 +85,18 @@ i{
 
   button{
     margin-top: 25px;
-    
+    background-color: black;
   }
+
+
 
 .bb{
   margin-right: 15px;
+}
+
+.bbb{
+  margin-left: 15px;
+  background-color: black;
 }
 
 a{
@@ -118,6 +124,7 @@ a{
 
 strong,i,svg{
   color: white;
+  
   
 }
 
